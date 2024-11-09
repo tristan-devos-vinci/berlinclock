@@ -73,4 +73,10 @@ describe("test", function() {
         expect(time).toBe('0');
     })
 
+    it("should return ", function() {
+        const time = main.printClock("19:42:22");
+        const clock = 
+        "R\nRRR0\nRRRR\nYYRYYRYY000\nYY00";
+        expect(time).toBe(clock);
+    })
 });
