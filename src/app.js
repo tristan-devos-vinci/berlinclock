@@ -31,6 +31,15 @@ export class Main {
         return "00000000000";
     }
 
-    
+    convertHourBy5 (time) {
+        const hours = this.getHours(time)
+        if (hours%5 === 1) return "R000";
+        if (hours%5 === 2) return "RR00";
+        if (hours%5 === 3) return "RRR0";
+        if (hours%5 === 4) return "RRRR";
+
+        return "0000";
+    }
+
 
 }
