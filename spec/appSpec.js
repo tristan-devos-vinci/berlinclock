@@ -53,5 +53,10 @@ describe("test", function() {
         expect(time).toBe('YYR00000000');
     })
 
+    it("should return RR00", function() {
+        const time = main.convertHourBy5("11:00:00") + " " + main.convertHour("11:00:00");
+        expect(time).toBe('RR00 R000');
+    })
+
 
 });
