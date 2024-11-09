@@ -10,9 +10,7 @@ export class Main {
 
         return "0000";
     }
-    getMinutes(time) {
-        return parseInt(time.split(':')[1]);
-    }
+    
 
     convertMinuteBy5 (time) {
         const minutes = this.getMinutes(time)
@@ -39,6 +37,18 @@ export class Main {
         if (hours%5 === 4) return "RRRR";
 
         return "0000";
+    }
+
+    getHours(time) {
+        return parseInt(time.split(':')[0]);
+    }
+
+    getMinutes(time) {
+        return parseInt(time.split(':')[1]);
+    }
+
+    getSeconds(time) {
+        return parseInt(time.split(':')[2]);
     }
 
 
