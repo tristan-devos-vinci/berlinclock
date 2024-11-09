@@ -54,9 +54,23 @@ describe("test", function() {
     })
 
     it("should return RR00", function() {
-        const time = main.convertHourBy5("11:00:00") + " " + main.convertHour("11:00:00");
-        expect(time).toBe('RR00 R000');
+        const time = main.convertHourBy5("11:00:00");
+        expect(time).toBe('RR00');
     })
 
+    it("should return R000", function() {
+        const time = main.convertHour("01:00:00");
+        expect(time).toBe('R000');
+    })
+
+    it("should return R", function() {
+        const time = main.convertSecond("00:00:02");
+        expect(time).toBe('R');
+    })
+
+    it("should return 0", function() {
+        const time = main.convertSecond("00:00:01");
+        expect(time).toBe('0');
+    })
 
 });

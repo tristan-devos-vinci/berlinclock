@@ -48,6 +48,13 @@ export class Main {
         return "0000";
     }
 
+    convertSecond(time){
+        const seconds = this.getSeconds(time);
+        if (seconds % 2 === 0) return "R";
+
+        return "0";
+    }
+
     getHours(time) {
         return parseInt(time.split(':')[0]);
     }
