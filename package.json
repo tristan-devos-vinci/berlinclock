@@ -1,5 +1,18 @@
 {
-  "dependencies": {
+  "name": "berlinclock",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
     "jasmine": "^5.4.0"
+  },
+  "dependencies": {
+    "tdd-ipl": "file:"
   }
 }
