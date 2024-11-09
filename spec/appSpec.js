@@ -11,6 +11,18 @@ describe("test", function() {
         expect(time).toBe('0000');
     });
 
+    it("should return Y000", function() {
+        const time = main.convertMinute("05:46:43");
+
+        expect(time).toBe('Y000');
+    });
+
+    it("should return Y000", function() {
+        const time = main.convertMinute("05:48:43");
+
+        expect(time).toBe('YYY0');
+    });
+
     it("should return 00000000000", function() {
         const time = main.convertMinuteBy5("00:00:00");
 
@@ -34,4 +46,12 @@ describe("test", function() {
 
         expect(time).toBe('YYR00000000');
     })
+
+    it("should return YYR00000000", function() {
+        const time = main.convertMinuteBy5("00:16:00");
+
+        expect(time).toBe('YYR00000000');
+    })
+
+
 });
