@@ -12,15 +12,27 @@ describe("test", function() {
     });
 
     it("should return Y000", function() {
-        const time = main.convertMinute("05:46:43");
+        const time = main.convertMinute("00:01:00");
 
         expect(time).toBe('Y000');
     });
 
-    it("should return Y000", function() {
-        const time = main.convertMinute("05:48:43");
+    it("should return YY00", function() {
+        const time = main.convertMinute("00:02:00");
+
+        expect(time).toBe('YY00');
+    });
+    
+    it("should return YYY0", function() {
+        const time = main.convertMinute("00:03:00");
 
         expect(time).toBe('YYY0');
+    });
+
+    it("should return YYYY", function() {
+        const time = main.convertMinute("00:04:00");
+
+        expect(time).toBe('YYYY');
     });
 
     it("should return 00000000000", function() {
@@ -48,19 +60,69 @@ describe("test", function() {
     })
 
     it("should return YYR00000000", function() {
-        const time = main.convertMinuteBy5("00:16:00");
+        const time = main.convertMinuteBy5("00:17:00");
 
         expect(time).toBe('YYR00000000');
     })
 
-    it("should return RR00", function() {
-        const time = main.convertHourBy5("11:00:00");
-        expect(time).toBe('RR00');
+    it("should return 0000", function() {
+        const time = main.convertHour("00:00:00");
+        expect(time).toBe('0000');
     })
 
     it("should return R000", function() {
         const time = main.convertHour("01:00:00");
         expect(time).toBe('R000');
+    })
+
+    it("should return RR00", function() {
+        const time = main.convertHour("02:00:00");
+        expect(time).toBe('RR00');
+    })
+
+    it("should return RRR0", function() {
+        const time = main.convertHour("03:00:00");
+        expect(time).toBe('RRR0');
+    })
+
+    it("should return RRRR", function() {
+        const time = main.convertHour("04:00:00");
+        expect(time).toBe('RRRR');
+    })
+
+    it("should return 0000", function() {
+        const time = main.convertHourBy5("00:00:00");
+        expect(time).toBe('0000');
+    })
+
+    it("should return R000", function() {
+        const time = main.convertHourBy5("05:00:00");
+        expect(time).toBe('R000');
+    })
+
+    it("should return RR00", function() {
+        const time = main.convertHourBy5("10:00:00");
+        expect(time).toBe('RR00');
+    })
+
+    it("should return RRR0", function() {
+        const time = main.convertHourBy5("15:00:00");
+        expect(time).toBe('RRR0');
+    })
+
+    it("should return RRRR", function() {
+        const time = main.convertHourBy5("20:00:00");
+        expect(time).toBe('RRRR');
+    })
+
+    it("should return R", function() {
+        const time = main.convertSecond("00:00:00");
+        expect(time).toBe('R');
+    })
+
+    it("should return 0", function() {
+        const time = main.convertSecond("00:00:01");
+        expect(time).toBe('0');
     })
 
     it("should return R", function() {
@@ -69,9 +131,15 @@ describe("test", function() {
     })
 
     it("should return 0", function() {
-        const time = main.convertSecond("00:00:01");
+        const time = main.convertSecond("00:00:03");
         expect(time).toBe('0');
     })
+
+    it("should return R", function() {
+        const time = main.convertSecond("00:00:04");
+        expect(time).toBe('R');
+    })
+
 
     it("should return ", function() {
         const time = main.printClock("19:42:22");
