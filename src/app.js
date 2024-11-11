@@ -58,7 +58,9 @@ export class Main {
     }
 
     printClock(time){
-        return this.convertSecond(time) + '\n' + this.convertHourBy5(time) + '\n' + this.convertHour(time) + '\n' + this.convertMinuteBy5(time) + '\n' + this.convertMinute(time);
+        const clock = this.convertSecond(time) + '\n' + this.convertHourBy5(time) + '\n' + this.convertHour(time) + '\n' + this.convertMinuteBy5(time) + '\n' + this.convertMinute(time);
+        console.log(clock);
+        return clock;
 
     }
     getHours(time) {
