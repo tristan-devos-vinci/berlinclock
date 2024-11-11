@@ -79,4 +79,12 @@ describe("test", function() {
         "R\nRRR0\nRRRR\nYYRYYRYY000\nYY00";
         expect(time).toBe(clock);
     })
+
+    it("should return ", function() {
+        const time = main.printClock("18:35:00");
+        const clock = 
+        "R\nRRR0\nRRR0\nYYRYYRY0000\n0000";
+        expect(time).toBe(clock);
+    })
+
 });

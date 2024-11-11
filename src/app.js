@@ -1,6 +1,5 @@
 
 export class Main {
-    // 0 : eteint, X : allumé
     convertMinute (time) {
         const minutes = this.getMinutes(time)
         if (minutes%5 === 1) return "Y000";
@@ -12,21 +11,24 @@ export class Main {
     }
     
 
-    convertMinuteBy5 (time) {
-        const minutes = this.getMinutes(time)
-        if (Math.floor(minutes/5) === 1) return "Y0000000000";
-        if (Math.floor(minutes/5) === 2) return "YY000000000";
-        if (Math.floor(minutes/5) === 3) return "YYR00000000";
-        if (Math.floor(minutes/5) === 4) return "YYRY0000000";
-        if (Math.floor(minutes/5) === 5) return "YYRYY000000";
-        if (Math.floor(minutes/5) === 6) return "YYRYYR00000";
-        if (Math.floor(minutes/5) === 7) return "YYRYYRY0000";
-        if (Math.floor(minutes/5) === 8) return "YYRYYRYY000";
-        if (Math.floor(minutes/5) === 9) return "YYRYYRYYR00";
-        if (Math.floor(minutes/5) === 10) return "YYRYYRYYRY0";
-        if (Math.floor(minutes/5) === 11) return "YYRYYRYYRYY";
-
-        return "00000000000";
+    convertMinuteBy5(time) {
+        const minutes = this.getMinutes(time);
+        const nbLights = Math.floor(minutes / 5);
+        let result = '';
+    
+        for (let i = 0; i < 11; i++) {
+            if (i < nbLights) {
+                if ((i + 1) % 3 === 0) {
+                    result += 'R';
+                } else {
+                    result += 'Y';
+                }
+            } else {
+                result += '0';
+            }
+        }
+    
+        return result;
     }
 
     convertHourBy5(time){
