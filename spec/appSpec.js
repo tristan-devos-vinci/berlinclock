@@ -5,6 +5,8 @@ describe("test", function() {
     beforeEach(() => {
         main = new Main();
     });
+    // 5 test of convertMinute
+    
     it("should return 0000", function() {
         const time = main.convertMinute("00:00:00");
 
@@ -34,6 +36,8 @@ describe("test", function() {
 
         expect(time).toBe('YYYY');
     });
+
+    // 5 test of convertMinuteBy5
 
     it("should return 00000000000", function() {
         const time = main.convertMinuteBy5("00:00:00");
@@ -65,6 +69,8 @@ describe("test", function() {
         expect(time).toBe('YYR00000000');
     })
 
+    // 5 test of convertHour
+
     it("should return 0000", function() {
         const time = main.convertHour("00:00:00");
         expect(time).toBe('0000');
@@ -90,6 +96,8 @@ describe("test", function() {
         expect(time).toBe('RRRR');
     })
 
+    // 5 test of convertHourBy5
+
     it("should return 0000", function() {
         const time = main.convertHourBy5("00:00:00");
         expect(time).toBe('0000');
@@ -114,6 +122,7 @@ describe("test", function() {
         const time = main.convertHourBy5("20:00:00");
         expect(time).toBe('RRRR');
     })
+    // 5 test of convertSecond
 
     it("should return R", function() {
         const time = main.convertSecond("00:00:00");
