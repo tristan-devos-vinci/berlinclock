@@ -19,10 +19,10 @@ describe("test", function() {
         expect(time).toBe('Y000');
     });
 
-    it("should return YY00", function() {
-        const time = main.convertMinute("00:02:00");
+    it("should return YYYY", function() {
+        const time = main.convertMinute("00:34:00");
 
-        expect(time).toBe('YY00');
+        expect(time).toBe('YYYY');
     });
     
     it("should return YYY0", function() {
