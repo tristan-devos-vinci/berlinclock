@@ -1,13 +1,9 @@
 
 export class Main {
-    convertMinute (time) {
-        const minutes = this.getMinutes(time)
-        if (minutes%5 === 1) return "Y000";
-        if (minutes%5 === 2) return "YY00";
-        if (minutes%5 === 3) return "YYY0";
-        if (minutes%5 === 4) return "YYYY";
-
-        return "0000";
+    convertMinute(time) {
+        const minutes = this.getMinutes(time);
+        const results = ["0000", "Y000", "YY00", "YYY0", "YYYY"];
+        return results[minutes % 5];
     }
     
 
