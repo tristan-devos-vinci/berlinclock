@@ -1,5 +1,6 @@
 
 export class Main {
+
     convertMinute(time) {
         const minutes = this.getMinutes(time);
         const results = ["0000", "Y000", "YY00", "YYY0", "YYYY"];
@@ -29,12 +30,9 @@ export class Main {
 
     convertHourBy5(time){
         const hours = this.getHours(time)
-        if (Math.floor(hours/5) === 1) return "R000";
-        if (Math.floor(hours/5) === 2) return "RR00";
-        if (Math.floor(hours/5) === 3) return "RRR0";
-        if (Math.floor(hours/5) === 4) return "RRRR";
+        const results = ["0000", "R000", "RR00", "RRR0", "RRRR"];
 
-        return "0000";
+        return results[Math.floor(hours/5)];
     }
     convertHour (time) {
         const hours = this.getHours(time)
@@ -46,6 +44,7 @@ export class Main {
         return "0000";
     }
 
+
     convertSecond(time){
         const seconds = this.getSeconds(time);
         if (seconds % 2 === 0) return "R";
@@ -55,10 +54,10 @@ export class Main {
 
     printClock(time){
         const clock = this.convertSecond(time) + '\n' + this.convertHourBy5(time) + '\n' + this.convertHour(time) + '\n' + this.convertMinuteBy5(time) + '\n' + this.convertMinute(time);
-        console.log(clock);
         return clock;
 
     }
+
     getHours(time) {
         return parseInt(time.split(':')[0]);
     }

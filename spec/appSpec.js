@@ -149,19 +149,42 @@ describe("test", function() {
         expect(time).toBe('R');
     })
 
+    // 5 test of printClock
 
-    it("should return ", function() {
+    it("should return R\nRRR0\nRRRR\nYYRYYRYY000\nYY00", function() {
         const time = main.printClock("19:42:22");
         const clock = 
         "R\nRRR0\nRRRR\nYYRYYRYY000\nYY00";
         expect(time).toBe(clock);
     })
 
-    it("should return ", function() {
+    it("should return R\nRRR0\nRRR0\nYYRYYRY0000\n0000", function() {
         const time = main.printClock("18:35:00");
         const clock = 
         "R\nRRR0\nRRR0\nYYRYYRY0000\n0000";
         expect(time).toBe(clock);
     })
+
+    it("should return R\nRRR0\n0000\nY0000000000\nY000", function() {
+        const time = main.printClock("15:06:30");
+        const clock = 
+        "R\nRRR0\n0000\nY0000000000\nY000";
+        expect(time).toBe(clock);
+    })
+
+    it("should return R\nRRR0\n0000\nY0000000000\nY000", function() {
+        const time = main.printClock("09:35:41");
+        const clock = 
+        "0\nR000\nRRRR\nYYRYYRY0000\n0000";
+        expect(time).toBe(clock);
+    })
+
+    it("should return 0\nRRRR\nRRR0\nYYRYYRYYRYY\nYYYY", function() {
+        const time = main.printClock("23:59:59");
+        const clock = 
+        "0\nRRRR\nRRR0\nYYRYYRYYRYY\nYYYY";
+        expect(time).toBe(clock);
+    })
+
 
 });
