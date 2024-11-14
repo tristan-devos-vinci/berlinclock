@@ -2,15 +2,15 @@
 export class Main {
 
     convertMinute(time) {
-        const minutes = this.getMinutes(time);
+        const minute = this.getMinutes(time);
         const results = ["0000", "Y000", "YY00", "YYY0", "YYYY"];
-        return results[minutes % 5];
+        return results[minute % 5];
     }
     
 
     convertMinuteBy5(time) {
-        const minutes = this.getMinutes(time);
-        const nbLights = Math.floor(minutes / 5);
+        const minute = this.getMinutes(time);
+        const nbLights = Math.floor(minute / 5);
         let result = '';
     
         for (let i = 0; i < 11; i++) {
@@ -29,25 +29,23 @@ export class Main {
     }
 
     convertHourBy5(time){
-        const hours = this.getHours(time)
+        const hour = this.getHours(time)
         const results = ["0000", "R000", "RR00", "RRR0", "RRRR"];
 
-        return results[Math.floor(hours/5)];
+        return results[Math.floor(hour/5)];
     }
-    convertHour (time) {
-        const hours = this.getHours(time)
-        if (hours%5 === 1) return "R000";
-        if (hours%5 === 2) return "RR00";
-        if (hours%5 === 3) return "RRR0";
-        if (hours%5 === 4) return "RRRR";
 
-        return "0000";
+    convertHour (time) {
+        const hour = this.getHours(time);
+        const results = ["0000", "R000", "RR00", "RRR0", "RRRR"]
+
+        return results[hour%5];
     }
 
 
     convertSecond(time){
-        const seconds = this.getSeconds(time);
-        if (seconds % 2 === 0) return "R";
+        const second = this.getSeconds(time);
+        if (second % 2 === 0) return "R";
 
         return "0";
     }
