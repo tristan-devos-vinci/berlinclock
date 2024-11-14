@@ -21,7 +21,7 @@ The Berlin Clock displays the time in a unique way:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/berlinclock.git
+    git clone https://github.com/tristan-devos-vinci/berlinclock.git
     ```
 
 2. Navigate to the project directory:
